@@ -25,11 +25,11 @@ dpkg-reconfigure -plow unattended-upgrades
 #Download Premade Config Files
 cd /etc/apt/apt.conf.d/
 rm 50unattended-upgrades
-wget https://raw.githubusercontent.com/lela810/Scripts/master/50unattended-upgrades
+wget https://raw.githubusercontent.com/lela810/Scripts/master/config/50unattended-upgrades
 
 cd  /etc/apt/
 rm listchanges.conf
-wget https://raw.githubusercontent.com/lela810/Scripts/master/listchanges.conf
+wget https://raw.githubusercontent.com/lela810/Scripts/master/config/listchanges.conf
 
 
 #Dry-Run

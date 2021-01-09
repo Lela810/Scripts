@@ -33,7 +33,7 @@ apt update && apt -y install telegraf
 systemctl stop telegraf
 cd /etc/telegraf
 rm telegraf.conf
-wget https://raw.githubusercontent.com/lela810/Scripts/master/telegraf.conf
+wget https://raw.githubusercontent.com/lela810/Scripts/master/config/telegraf.conf
 sed -i "s/__database__/$database/g" telegraf.conf
 
 
