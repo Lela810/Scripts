@@ -1,8 +1,5 @@
 #!/bin/bash 
 
-echo "Enter Database name to be created:"
-read database
-
 
 # Clear Current Screen
 clear
