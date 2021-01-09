@@ -29,6 +29,7 @@ apt update && apt -y install telegraf
 
 # Create Telegraf Config
 cd /etc/telegraf
+rm telegraf.conf
 wget https://raw.githubusercontent.com/lela810/Scripts/master/telegraf.conf
 sed -i "s/__database__/$database/g" telegraf.conf
 
