@@ -30,7 +30,8 @@ apt update && apt -y install telegraf
 # Create Telegraf Config
 cd /etc/telegraf
 wget https://raw.githubusercontent.com/lela810/Scripts/master/telegraf.conf
-sed -e "s/\$database/1/" telegraf.conf
+sed -i "s/__database__/$database/g" telegraf.conf
+
 
 systemctl enable telegraf
-#systemctl start telegraf
+systemctl start telegraf
