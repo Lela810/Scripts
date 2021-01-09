@@ -15,6 +15,8 @@ elif [[ $EUID -eq 0 ]]; then
    echo -e "Session Running as \e[36mROOT\e[0m"
 fi
 
+systemctl stop telegraf
+
 # Update Local System Packages 
 apt update && apt -y upgrade
 
