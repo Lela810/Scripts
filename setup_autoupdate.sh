@@ -30,3 +30,7 @@ wget https://raw.githubusercontent.com/lela810/Scripts/master/50unattended-upgra
 cd  /etc/apt/
 rm listchanges.conf
 wget https://raw.githubusercontent.com/lela810/Scripts/master/listchanges.conf
+
+
+#Dry-Run
+unattended-upgrades --dry-run
