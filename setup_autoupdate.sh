@@ -20,3 +20,13 @@ apt -y install unattended-upgrades apt-listchanges bsd-mailx
 
 #Enable Auto Update
 dpkg-reconfigure -plow unattended-upgrades
+
+
+#Download Premade Config Files
+cd /etc/apt/apt.conf.d/
+rm 50unattended-upgrades
+wget https://raw.githubusercontent.com/lela810/Scripts/master/50unattended-upgrades
+
+cd  /etc/apt/
+rm listchanges.conf
+wget https://raw.githubusercontent.com/lela810/Scripts/master/listchanges.conf
