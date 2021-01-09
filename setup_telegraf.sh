@@ -30,6 +30,7 @@ apt update && apt -y install telegraf
 
 
 # Create Telegraf Config
+systemctl stop telegraf
 cd /etc/telegraf
 rm telegraf.conf
 wget https://raw.githubusercontent.com/lela810/Scripts/master/telegraf.conf
