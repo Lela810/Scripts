@@ -14,7 +14,15 @@ fi
 
 
 #Download AMP-Overlays
+cd /opt/cubecoders/amp/shared/overlays/
+rm -r *
+git clone https://github.com/Lela810/AMP-overlays
+mv ./AMP-overlays/* ./
+rm -r ./AMP-overlays
 
-cd  /opt/cubecoders/amp/shared/overlays/
-rm *
-wget https://raw.githubusercontent.com/lela810/amp-overlays/master/
+echo
+echo "Your New Overlays:"
+ls 
+echo
+echo
+
