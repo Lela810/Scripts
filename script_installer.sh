@@ -79,9 +79,9 @@ fi
 
 #Set Fixed ip
 
-        sed -i "s/$interface:/$interface:\n      dhcp4: no\n      dhcp6: no\n      addresses: [$ip\/$sm]\n      gateway4: $gw\n      nameservers:\n        addresses: [192.168.1.112,192.168.1.110]/" /etc/netplan/00-installer-config.yaml
-        sed -i "s/dhcp4: yes//" /etc/netplan/00-installer-config.yaml
-		sed -i "s/dhcp6: yes//" /etc/netplan/00-installer-config.yaml
+        sed -i "s/$interface:/$interface:\n      dhcp4: no\n      dhcp6: no\n      addresses: [$ip\/$sm]\n      gateway4: $gw\n      nameservers:\n        search: [klaus.local]\n        addresses: [192.168.1.112, 192.168.1.110]/" /etc/netplan/00-installer-config.yaml
+        sed -i "s/dhcp4: true//" /etc/netplan/00-installer-config.yaml
+		sed -i "s/dhcp6: true//" /etc/netplan/00-installer-config.yaml
 netplan apply
 fi
 
