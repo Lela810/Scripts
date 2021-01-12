@@ -89,9 +89,7 @@ fi
 cd /tmp/
 git clone https://github.com/Lela810/Scripts
 cd ./Scripts
-rm -r ./config
-rm ./script_installer.sh
-rm ./download_amp_overlays.sh
+cd ./linux
 chmod +x *
 mv * /home/administrator
 cd /home/administrator
