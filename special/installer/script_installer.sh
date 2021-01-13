@@ -29,7 +29,7 @@ if [ "$static" == "y" ]; then
 
 
 
-ip a
+cat /etc/netplan/00-installer-config.yaml
 echo
 echo
 echo
