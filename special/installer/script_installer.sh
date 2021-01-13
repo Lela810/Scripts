@@ -75,16 +75,6 @@ echo
 if [ "$gw" == "" ]; then
 gw=192.168.1.1
 fi
-
-
-
-
-#Set Fixed ip
-
-        sed -i "s/$interface:/$interface:\n      dhcp4: no\n      dhcp6: no\n      addresses: [$ip\/$sm]\n      gateway4: $gw\n      nameservers:\n        search: [klaus.local]\n        addresses: [192.168.1.112, 192.168.1.110]/" /etc/netplan/00-installer-config.yaml
-        sed -i "s/dhcp4: true//" /etc/netplan/00-installer-config.yaml
-		sed -i "s/dhcp6: true//" /etc/netplan/00-installer-config.yaml
-netplan apply
 fi
 
 #Download Scripts Repo
@@ -103,10 +93,6 @@ echo "Your Scrips are now located in /home/administrator"
 echo 
 echo
 
-if [ "$static" == "y" ]; then 
-echo "Your System will be available under: $ip/$sm"
-echo
-fi
 
 #Execute Scripts
 echo
@@ -167,4 +153,14 @@ echo "Rebooting Now!"
 echo
 reboot
 fi
+if [ "$static" == "y" ]; then
+#Set Fixed ip
 
+echo "Your System will be available under: $ip/$sm"
+echo
+
+        sed -i "s/$interface:/$interface:\n      dhcp4: no\n      dhcp6: no\n      addresses: [$ip\/$sm]\n      gateway4: $gw\n      nameservers:\n        search: [klaus.local]\n        addresses: [192.168.1.112, 192.168.1.110]/" /etc/netplan/00-installer-config.yaml
+        sed -i "s/dhcp4: true//" /etc/netplan/00-installer-config.yaml
+		sed -i "s/dhcp6: true//" /etc/netplan/00-installer-config.yaml
+netplan apply
+fi
