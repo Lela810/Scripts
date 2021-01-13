@@ -100,12 +100,6 @@ echo
 echo "Your Scrips are now located in /home/administrator"
 echo 
 echo
-echo
-echo "Do you wanna Reboot now? y/n:"
-read reboot
-echo
-echo
-
 
 if [ "$static" == "y" ]; then 
 echo "Your System will be available under: $ip/$sm"
@@ -114,6 +108,57 @@ echo
 echo
 fi
 
+#Execute Scripts
+echo
+echo "Do you wanna install Telegraf? y/n:"
+read telegraf
+echo
+echo
+
+if [ "$telegraf" == "y" ]; then 
+./setup_telegraf.sh
+echo
+echo
+echo "Telegraf installed!"
+fi
+
+
+echo
+echo "Do you wanna install Linux Integration Services for Hyper-V? y/n:"
+read ubuntulis
+echo
+echo
+
+if [ "$ubuntulis" == "y" ]; then 
+./setup_ubuntulis.sh
+echo
+echo
+echo "Linux Integration Services installed!"
+fi
+
+
+echo
+echo "Do you wanna install Auto-update? y/n:"
+read autoupdate
+echo
+echo
+
+if [ "$autoupdate" == "y" ]; then 
+./setup_autoupdate.sh
+echo
+echo
+echo "Auto-update installed!"
+fi
+
+
+
+
+#reboot
+echo
+echo "Do you wanna Reboot now? y/n:"
+read reboot
+echo
+echo
 
 if [ "$reboot" == "y" ]; then 
 echo "Rebooting Now!"
