@@ -14,7 +14,7 @@ fi
 
 #install needed Tools
 apt update && apt -y upgrade
-apt -y install net-tools network-manager git
+apt -y install net-tools network-manager git grep
 
 
 clear
@@ -32,8 +32,6 @@ if [ "$static" == "y" ]; then
 cat /etc/netplan/00-installer-config.yaml
 echo
 echo
-echo
-echo
 echo "What Interface should get it? default:eth0 :"
 read interface
 echo
@@ -43,6 +41,10 @@ if [ "$interface" == "" ]; then
 interface=eth0
 fi
 
+
+ifconfig $interface | grep "inet"
+
+echo
 echo
 echo "What IP should it get?:"
 read ip
@@ -104,8 +106,6 @@ echo
 if [ "$static" == "y" ]; then 
 echo "Your System will be available under: $ip/$sm"
 echo
-echo
-echo
 fi
 
 #Execute Scripts
@@ -151,9 +151,11 @@ echo "Auto-update installed!"
 fi
 
 
-
-
+if [ -f /var/run/reboot-required ]; then
+echo ***‘System needs to be rebooted’***
+fi
 #reboot
+
 echo
 echo "Do you wanna Reboot now? y/n:"
 read reboot
