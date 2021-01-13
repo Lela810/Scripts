@@ -13,7 +13,7 @@ elif [[ $EUID -eq 0 ]]; then
 fi
 
 #install needed Tools
-apt get update && apt get upgrade
+apt update && apt -y upgrade
 apt -y install net-tools network-manager git
 
 

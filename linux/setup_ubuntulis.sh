@@ -15,8 +15,6 @@ elif [[ $EUID -eq 0 ]]; then
    echo -e "Session Running as \e[36mROOT\e[0m"
 fi
 
-# Update Local System Packages 
-apt update && apt -y upgrade
 
 # Add hv_modules to /etc/initramfs-tools/modules
 echo 'hv_vmbus' >> /etc/initramfs-tools/modules
@@ -30,5 +28,3 @@ apt -y install linux-virtual linux-cloud-tools-virtual linux-tools-virtual mloca
 # Update Initramfs
 update-initramfs -u
 
-# Reboot Server
-reboot

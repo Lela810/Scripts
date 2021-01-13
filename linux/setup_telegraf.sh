@@ -17,8 +17,6 @@ fi
 
 systemctl stop telegraf
 
-# Update Local System Packages 
-apt update && apt -y upgrade
 
 # Add Add the InfluxData repository with the following commands:
 wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -

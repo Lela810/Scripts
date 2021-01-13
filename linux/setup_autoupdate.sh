@@ -12,8 +12,6 @@ elif [[ $EUID -eq 0 ]]; then
    echo -e "Session Running as \e[36mROOT\e[0m"
 fi
 
-# Update Local System Packages 
-apt update && apt -y upgrade
 
 #install Auto Update
 apt -y install unattended-upgrades apt-listchanges bsd-mailx
