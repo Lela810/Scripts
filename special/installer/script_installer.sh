@@ -152,7 +152,7 @@ fi
 
 
 if [ -f /var/run/reboot-required ]; then
-echo ***‘System needs to be rebooted’***
+echo ***System needs to be rebooted***
 fi
 #reboot
 
