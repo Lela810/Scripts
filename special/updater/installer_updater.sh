@@ -13,6 +13,10 @@ elif [[ $EUID -eq 0 ]]; then
 fi
 
 
+#short term
+apt remove unattended-upgrades 
+
+
 # Update
 cd /home/administrator
 rm script_installer.sh
