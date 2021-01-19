@@ -12,19 +12,12 @@ elif [[ $EUID -eq 0 ]]; then
    echo -e "Session Running as \e[36mROOT\e[0m"
 fi
 
-
-# install updater
-mkdir /root/updater
+#Remove old updater files
 cd /root/updater
 rm updater.sh
+
+
+
+#Update
 wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/updater.sh
 chmod +x updater.sh
-
-#write out current crontab
-crontab -l > mycron
-#echo new cron into cron file
-sed -i "/updater.sh/d" mycron
-echo "*/5 * * * * /root/updater/updater.sh" >> mycron
-#install new cron file
-crontab mycron
-rm mycron
