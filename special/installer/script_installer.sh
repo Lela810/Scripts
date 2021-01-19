@@ -100,7 +100,7 @@ echo
 
 
 
-./setup_updater
+./setup_updater.sh
 
 
 

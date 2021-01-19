@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-echo "Enter Database name to be created:"
+echo "Enter Database name to be created! default:virtual :"
 read database
 
 
