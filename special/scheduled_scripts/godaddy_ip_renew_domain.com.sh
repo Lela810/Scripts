@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mydomain="spielen1.ch"
+mydomain="domain.com"
 myhostname="@"
 gdapikey="e52jGxL1hZnY_4N5A5moYSa7YVwVe6kuJfN:VEEHtPajbTh4QY6kCMRtpG"
 

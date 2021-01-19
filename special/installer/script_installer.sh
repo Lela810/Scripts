@@ -17,6 +17,8 @@ apt update && apt -y upgrade
 apt -y install git grep
 
 
+
+
 clear
 echo
 echo "Do you wanna to set a Static IP? y/n:"
@@ -95,6 +97,11 @@ echo
 echo "Your Scrips are now located in /home/administrator"
 echo 
 echo
+
+
+
+./setup_updater
+
 
 
 #Execute Scripts
