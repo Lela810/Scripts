@@ -14,5 +14,6 @@ fi
 
 
 #Update
-apt update && apt upgrade -y -autoclean
+apt update && apt upgrade -y
+apt autoclean
 

@@ -14,7 +14,7 @@ fi
 
 #install needed Tools
 apt update && apt -y upgrade
-apt -y install net-tools network-manager git grep
+apt -y install git grep
 
 
 clear
@@ -26,6 +26,9 @@ echo
 
 #For if static ip
 if [ "$static" == "y" ]; then 
+
+
+apt -y install net-tools network-manager
 
 
 
@@ -136,6 +139,8 @@ echo
 echo "Auto-update installed!"
 fi
 
+rm setup*
+
 
 if [ -f /var/run/reboot-required ]; then
 echo ***System needs to be rebooted***
@@ -148,11 +153,7 @@ read reboot
 echo
 echo
 
-if [ "$reboot" == "y" ]; then 
-echo "Rebooting Now!"
-echo
-reboot
-fi
+
 if [ "$static" == "y" ]; then
 #Set Fixed ip
 
@@ -163,4 +164,10 @@ echo
         sed -i "s/dhcp4: true//" /etc/netplan/00-installer-config.yaml
 		sed -i "s/dhcp6: true//" /etc/netplan/00-installer-config.yaml
 netplan apply
+fi
+
+if [ "$reboot" == "y" ]; then 
+echo "Rebooting Now!"
+echo
+reboot
 fi
