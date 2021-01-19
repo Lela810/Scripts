@@ -26,7 +26,7 @@ crontab -l > mycron
 sed -i "/updater.sh/d" mycron
 sed -i "/autoupdate.sh/d" mycron
 sed -i "/installer_updater.sh/d" mycron
-echo "*/5 * * * * /root/updater/updater.sh > /dev/null" >> mycron
+echo "*/5 * * * * /root/updater/updater.sh > /dev/null 2>&1" >> mycron
 #install new cron file
 crontab mycron
 rm mycron
