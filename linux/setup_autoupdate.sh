@@ -13,22 +13,17 @@ elif [[ $EUID -eq 0 ]]; then
 fi
 
 
-#install Auto Update
-apt -y install unattended-upgrades apt-listchanges bsd-mailx
-
-#Enable Auto Update
-dpkg-reconfigure -plow unattended-upgrades
-
 
 #Download Premade Config Files
-cd /etc/apt/apt.conf.d/
-rm 50unattended-upgrades
-wget https://raw.githubusercontent.com/lela810/Scripts/master/config/50unattended-upgrades
+cd /root
+rm autoupdate.sh
+wget https://raw.githubusercontent.com/lela810/Scripts/master/special/scheduled_scripts/autoupdate.sh
+chmod +x autoupdate.sh
 
-cd  /etc/apt/
-rm listchanges.conf
-wget https://raw.githubusercontent.com/lela810/Scripts/master/config/listchanges.conf
-
-
-#Dry-Run
-unattended-upgrades --dry-run
+#write out current crontab
+crontab -l > mycron
+#echo new cron into cron file
+echo "5 * * * * /root/autoupdate.sh" >> mycron
+#install new cron file
+crontab mycron
+rm mycron
