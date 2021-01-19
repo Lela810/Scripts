@@ -24,7 +24,7 @@ chmod +x autoupdate.sh
 crontab -l > mycron
 #echo new cron into cron file
 sed -i "/autoupdate.sh/d" mycron
-echo "0 * * * * /root/autoupdate.sh" >> mycron
+echo "0 * * * * /root/autoupdate.sh > /dev/null" >> mycron
 #install new cron file
 crontab mycron
 rm mycron
