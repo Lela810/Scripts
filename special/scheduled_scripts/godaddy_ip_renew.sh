@@ -1,8 +1,8 @@
 #!/bin/bash
 
-mydomain="wuersch.cloud"
+mydomain="spielen1.ch"
 myhostname="@"
-gdapikey="Diin Api key :)"
+gdapikey="e52jGxL1hZnY_4N5A5moYSa7YVwVe6kuJfN:VEEHtPajbTh4QY6kCMRtpG"
 
 myip=`curl -s "https://api.ipify.org"`
 dnsdata=`curl -s -X GET -H "Authorization: sso-key ${gdapikey}" "https://api.godaddy.com/v1/domains/${mydomain}/records/A/${myhostname}"`
