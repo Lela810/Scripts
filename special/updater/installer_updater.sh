@@ -14,7 +14,7 @@ fi
 
 
 #short term
-apt remove unattended-upgrades 
+apt -y remove unattended-upgrades 
 
 
 # Update
