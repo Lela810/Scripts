@@ -149,16 +149,16 @@ fi
 rm setup*
 
 
+
+#reboot
 if [ -f /var/run/reboot-required ]; then
 echo ***System needs to be rebooted***
-fi
-#reboot
-
 echo
 echo "Do you wanna Reboot now? y/n:"
 read reboot
 echo
 echo
+fi
 
 
 if [ "$static" == "y" ]; then
