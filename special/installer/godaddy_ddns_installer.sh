@@ -26,7 +26,7 @@ echo
 echo
 
 if [ "$hostname" == "" ]; then
-gw="@"
+hostname="@"
 fi
 
 
@@ -39,10 +39,21 @@ wget https://raw.githubusercontent.com/lela810/Scripts/master/special/scheduled_
 FILE="godaddy_ip_renew_domain.com.sh"
 
 find . -type f -name '*domain.com.sh' | while read FILE ; do
-    newfile="$(echo ${FILE} |sed -e 's/\\domain.com/$Domain/')" ;
+    newfile="$(echo ${FILE} |sed -e "s/domain.com/$Domain/" |sed -e 's/\.\///')" ;
     mv "${FILE}" "${newfile}" ;
-done 
 
-
-sed -i "s/__domain.com__/$Domain/g" $newfile
-sed -i "s/__hostname__/$hostname/g" $newfile
+	sed -i "s/__domain.com__/$Domain/g" "${newfile}"
+	sed -i "s/__hostname__/$hostname/g" "${newfile}"
+	
+	chmod +x "${newfile}"
+	
+	#write out current crontab
+	crontab -l > mycron
+	#echo new cron into cron file
+	sed -i "/${newfile}/d" mycron
+	echo "*/5 * * * * /root/${newfile} > /dev/null 2>&1" >> mycron
+	#install new cron file
+	crontab mycron
+	rm mycron
+done	
+	
