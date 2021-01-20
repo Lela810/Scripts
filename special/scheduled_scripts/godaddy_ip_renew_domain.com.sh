@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mydomain="domain.com"
-myhostname="@"
+mydomain="__domain.com__"
+myhostname="__hostname__"
 gdapikey="e52jGxL1hZnY_4N5A5moYSa7YVwVe6kuJfN:VEEHtPajbTh4QY6kCMRtpG"
 
 myip=`curl -s "https://api.ipify.org"`
