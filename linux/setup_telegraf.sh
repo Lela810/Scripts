@@ -2,7 +2,9 @@
 
 echo "Enter Database name to be created! default:virtual :"
 read database
-
+if [ "$database" == "" ]; then
+database="virtual"
+fi
 
 # Clear Current Screen
 clear
