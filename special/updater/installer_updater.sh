@@ -13,8 +13,7 @@ elif [[ $EUID -eq 0 ]]; then
 fi
 
 
-#short term
-apt -y remove unattended-upgrades 
+
 
 
 # Update
