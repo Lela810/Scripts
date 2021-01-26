@@ -19,6 +19,10 @@ rm up.sh
 
 
 #Update
+
+apt -y updater
+apt -y upgrade
+
 wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/installer_updater.sh
 
 
