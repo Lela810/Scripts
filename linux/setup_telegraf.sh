@@ -35,6 +35,8 @@ cd /etc/telegraf
 rm telegraf.conf
 wget https://raw.githubusercontent.com/lela810/Scripts/master/config/telegraf.conf
 sed -i "s/__database__/$database/g" telegraf.conf
+rm /root/Telegraf_Database.txt
+echo "$database" > /root/Telegraf_Database.txt
 
 
 systemctl enable telegraf
