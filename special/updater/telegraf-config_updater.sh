@@ -4,12 +4,15 @@
 # Clear Current Screen
 clear
 
+if [ ! -d /root/updater-data ]; then
+	mkdir /root/updater-data
+fi
 
-if [ -f /root/Telegraf_Database.txt ]; then
-	database=$(cat /root/Telegraf_Database.txt)
+if [ -f /root/updater-data/Telegraf_Database.txt ]; then
+	database=$(cat /root/updater-data/Telegraf_Database.txt)
 else
 	database="virtual"
-	echo "$database" > /root/Telegraf_Database.txt
+	echo "$database" > /root/updater-data/Telegraf_Database.txt
 fi
 
 
