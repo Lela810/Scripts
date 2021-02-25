@@ -10,6 +10,8 @@ cd /root/updater
 rm *_updater.sh
 rm up.sh
 
+rm *.sh.*
+
 
 #Update
 
