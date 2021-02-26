@@ -1,10 +1,10 @@
 #!/bin/bash 
 
-echo "Enter Database name to be created! default:virtual :"
-read database
-if [ "$database" == "" ]; then
-database="virtual"
-fi
+#echo "Enter Database name to be created! default:virtual :"
+#read database
+#if [ "$database" == "" ]; then
+#database="virtual"
+#fi
 
 # Clear Current Screen
 clear
@@ -34,11 +34,11 @@ systemctl stop telegraf
 cd /etc/telegraf
 rm telegraf.conf
 wget https://raw.githubusercontent.com/lela810/Scripts/master/config/telegraf.conf
-sed -i "s/__database__/$database/g" telegraf.conf
+#sed -i "s/__database__/$database/g" telegraf.conf
 
-mkdir /root/updater-data
-rm /root/updater-data/Telegraf_Database.txt
-echo "$database" > /root/updater-data/Telegraf_Database.txt
+#mkdir /root/updater-data
+#rm /root/updater-data/Telegraf_Database.txt
+#echo "$database" > /root/updater-data/Telegraf_Database.txt
 
 
 systemctl enable telegraf
