@@ -104,21 +104,6 @@ echo
 
 
 
-#Execute Scripts
-echo
-echo "Do you wanna install Telegraf? y/n:"
-read telegraf
-echo
-echo
-
-if [ "$telegraf" == "y" ]; then 
-./setup_telegraf.sh
-echo
-echo
-echo "Telegraf installed!"
-fi
-
-
 echo
 echo "Do you wanna install Linux Integration Services for Hyper-V? y/n:"
 read ubuntulis
