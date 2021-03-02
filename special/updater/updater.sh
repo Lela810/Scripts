@@ -12,7 +12,7 @@ rm up.sh
 
 rm *.sh.*
 
-apt remove telegraf
+apt remove telegraf -y
 
 
 #Update
