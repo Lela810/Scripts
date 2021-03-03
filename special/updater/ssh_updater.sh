@@ -10,6 +10,9 @@ clear
 
 
 # Update
+if [ ! "$HOSTNAME" = sshgateway ]; then
+
+
 cd /etc
 
 if [ ! -f /etc/hosts.allow.old ]; then
@@ -28,9 +31,12 @@ wget https://raw.githubusercontent.com/lela810/Scripts/master/config/hosts.deny
 
 
 
+
 echo
 echo
 echo "Your SSH Hosts are now up to date!"
 echo
 echo
 
+
+fi
