@@ -29,7 +29,7 @@ wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/up
 chmod +x *
 
 
-#./ssh_updater.sh
+./ssh_updater.sh
 ./autoupdate_updater.sh
 ./installer_updater.sh
 ./up.sh
