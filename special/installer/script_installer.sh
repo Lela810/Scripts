@@ -131,6 +131,21 @@ echo
 echo "Auto-update installed!"
 fi
 
+
+echo
+echo "Do you wanna install Webmin? y/n:"
+read webmin
+echo
+echo
+
+if [ "$webmin" == "y" ]; then 
+./setup_webmin.sh
+echo
+echo
+echo "Webmin installed!"
+fi
+
+
 rm setup*
 
 
