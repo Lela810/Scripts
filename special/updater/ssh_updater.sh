@@ -10,7 +10,7 @@ clear
 
 
 # Update
-if [ ! "$HOSTNAME" = sshgateway ]; then
+if [ ! "$HOSTNAME" = sshgateway ] || [ ! "$HOSTNAME" = mail.lklaus.ch ]; then
 
 
 cd /etc
