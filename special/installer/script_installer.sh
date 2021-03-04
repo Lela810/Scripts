@@ -146,6 +146,22 @@ echo "Webmin installed!"
 fi
 
 
+
+echo
+echo "Do you wanna install a Snowl-Sensor? y/n:"
+read snowl
+echo
+echo
+
+if [ "$snowl" == "y" ]; then 
+./setup_snowlsensor.sh
+echo
+echo
+echo "Snowl-Sensor installed!"
+fi
+
+
+
 rm setup*
 
 
