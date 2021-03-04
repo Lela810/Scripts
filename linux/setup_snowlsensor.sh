@@ -16,7 +16,7 @@ fi
 
 #Download Premade Config Files
 cd /tmp
-add-apt-repository ppa:snowl/snort
+add-apt-repository -y ppa:snowl/snort
 apt-get update
 apt install -y snort
 systemctl stop snort
