@@ -10,7 +10,6 @@ clear
 
 
 # Update
-if [ ! "$HOSTNAME" = sshgateway ]; then
 
 
 cd /etc
@@ -39,4 +38,3 @@ echo
 echo
 
 
-fi

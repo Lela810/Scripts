@@ -70,7 +70,7 @@ gw=192.168.1.1
 fi
 
 
-
+#grep -w "dhcp4: no" /etc/netplan/00-installer-config.yaml
 #Set Fixed ip
 
 echo "Your System will be available under: $ip/$sm"
