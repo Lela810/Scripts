@@ -1,0 +1,13 @@
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    eth0:
+      dhcp4: no
+      dhcp6: no
+      addresses: [192.168.1.127/24]
+      gateway4: 192.168.1.1
+      nameservers:
+        search: [klaus.local]
+        addresses: [192.168.1.112, 192.168.1.110]
+      
+  version: 2

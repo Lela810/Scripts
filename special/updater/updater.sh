@@ -28,8 +28,9 @@ wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/ss
 wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/up.sh
 chmod +x *
 
-
+if [ ! "$HOSTNAME" = sshgateway ]; then
 ./ssh_updater.sh
+fi
 ./autoupdate_updater.sh
 ./installer_updater.sh
 ./up.sh
