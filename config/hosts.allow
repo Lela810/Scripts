@@ -10,4 +10,3 @@
 
 sshd,sshdfwd-X11 : 192.168.1.121
 sshd,sshdfwd-X11 : 192.168.1.120
-sshd,sshdfwd-X11 : 192.168.1.128
