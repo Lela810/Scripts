@@ -29,6 +29,14 @@ read static
 echo
 echo
 
+if [ "$static" == "y" ]; then 
+./setup_ip.sh
+echo
+echo
+echo "Your IP is now set Static!"
+exit 0
+fi
+
 
 echo
 echo "Do you wanna install Linux Integration Services for Hyper-V? y/n:"
@@ -80,12 +88,6 @@ rm -r /tmp/Scripts
 
 
 
-if [ "$static" == "y" ]; then 
-./setup_ip.sh
-echo
-echo
-echo "Your IP is now set Static!"
-fi
 
 if [ "$ubuntulis" == "y" ]; then 
 ./setup_ubuntulis.sh

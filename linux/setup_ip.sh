@@ -74,6 +74,7 @@ fi
 #Set Fixed ip
 
 echo "Your System will be available under: $ip/$sm"
+echo "You can use this installer for other configurations aswell!"
 echo
 
         sed -i "s/$interface:/$interface:\n      dhcp4: no\n      dhcp6: no\n      addresses: [$ip\/$sm]\n      gateway4: $gw\n      nameservers:\n        search: [klaus.local]\n        addresses: [192.168.1.112, 192.168.1.110]/" /etc/netplan/00-installer-config.yaml
