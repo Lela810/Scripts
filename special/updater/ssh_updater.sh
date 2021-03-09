@@ -6,7 +6,8 @@ clear
 
 
 
-
+systemctl disable ufw
+ufw disable
 
 
 # Update

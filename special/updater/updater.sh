@@ -30,8 +30,6 @@ chmod +x *
 
 if [ ! "$HOSTNAME" = sshgateway ]; then
 ./ssh_updater.sh
-systemctl disable ufw
-ufw disable
 fi
 
 ./autoupdate_updater.sh
