@@ -14,7 +14,28 @@ fi
 
 
 
+#install needed Tools
+apt update && apt -y upgrade
+apt -y install git grep
+
+
+
+
+#Download Scripts Repo
+cd /tmp/
+git clone https://github.com/Lela810/Scripts
+cd ./Scripts
+chmod +x *
+cd /root
+rm -r /tmp/Scripts
+
+
+
+
 clear
+
+
+
 
 echo
 echo
@@ -30,7 +51,7 @@ echo
 echo
 
 if [ "$static" == "y" ]; then 
-./setup_ip.sh
+./linux/setup_ip.sh
 echo
 echo
 echo "Your IP is now set Static!"
@@ -68,59 +89,40 @@ echo
 
 
 
-#install needed Tools
-apt update && apt -y upgrade
-apt -y install git grep
-
-
-
-
-#Download Scripts Repo
-cd /tmp/
-git clone https://github.com/Lela810/Scripts
-cd ./Scripts
-cd ./linux
-chmod +x *
-mv * /home/administrator
-cd /home/administrator
-rm -r /tmp/Scripts
-
-
 
 
 
 if [ "$ubuntulis" == "y" ]; then 
-./setup_ubuntulis.sh
+./linux/setup_ubuntulis.sh
 echo
 echo
 echo "Linux Integration Services installed!"
 fi
 
 if [ "$autoupdate" == "y" ]; then 
-./setup_autoupdate.sh
+./linux/setup_autoupdate.sh
 echo
 echo
 echo "Auto-update installed!"
 fi
 
 if [ "$webmin" == "y" ]; then 
-./setup_webmin.sh
+./linux/setup_webmin.sh
 echo
 echo
 echo "Webmin installed!"
 fi
 
 if [ "$snowl" == "y" ]; then 
-./setup_snowlsensor.sh
+./linux/setup_snowlsensor.sh
 echo
 echo
 echo "Snowl-Sensor installed!"
 fi
 
-./setup_updater.sh
+./linux/setup_updater.sh
 
 
-rm setup*
 
 
 
