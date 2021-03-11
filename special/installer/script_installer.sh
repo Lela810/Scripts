@@ -56,7 +56,6 @@ if [ "$static" == "y" ]; then
 echo
 echo
 echo "Your IP is now set Static!"
-exit 0
 fi
 
 
