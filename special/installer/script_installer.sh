@@ -129,6 +129,22 @@ cd /root
 rm -r /tmp/Scripts
 
 
+
+
+echo
+echo "Do you wanna set the IP now?(Connection loss in most cases) y/n:"
+read netplanapply
+echo
+echo
+
+if [ "$netplanapply" == "y" ]; then 
+echo "Setting IP now!"
+echo
+netplan apply
+fi
+
+
+
 #reboot
 if [ -f /var/run/reboot-required ]; then
 echo ***System needs to be rebooted***
@@ -146,3 +162,5 @@ echo "Rebooting Now!"
 echo
 reboot
 fi
+
+
