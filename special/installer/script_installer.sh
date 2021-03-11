@@ -141,6 +141,7 @@ if [ "$netplanapply" == "y" ]; then
 echo "Setting IP now!"
 echo
 netplan apply
+exit 0
 fi
 
 
