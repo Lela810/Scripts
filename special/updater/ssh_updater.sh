@@ -6,8 +6,8 @@ clear
 
 
 
-systemctl disable ufw
-ufw disable
+
+ufw allow ssh
 
 
 # Update

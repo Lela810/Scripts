@@ -19,3 +19,6 @@ cd /tmp
 apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip -y
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.972_all.deb
 dpkg --install webmin_1.972_all.deb
+
+
+ufw allow 10000

@@ -24,6 +24,8 @@ systemctl disable snort
 wget https://snowl.io/download/snowl-sensor_1.7.1_amd64.deb && dpkg -i ./snowl-sensor_1.7.1_amd64.deb
 /opt/snowl-sensor/snowl-snort fix
 
+ufw allow 9030
+
 
 
 
