@@ -24,10 +24,11 @@ apt -y install git grep
 #Download Scripts Repo
 cd /tmp/
 git clone https://github.com/Lela810/Scripts
-cd ./Scripts
+cd ./Scripts/linux
 chmod +x *
-cd /root
-rm -r /tmp/Scripts
+cd /tmp/Scripts
+
+
 
 
 
@@ -124,6 +125,8 @@ fi
 
 
 
+cd /root
+rm -r /tmp/Scripts
 
 
 #reboot
