@@ -84,9 +84,7 @@ read primarydns
 echo
 echo
 
-if [ "$primarydns" == "" ]; then
-primarydns=192.168.1.112
-fi
+
 
 
 echo
@@ -95,13 +93,16 @@ read secondarydns
 echo
 echo
 
+fi
+
+
+if [ "$primarydns" == "" ]; then
+primarydns=192.168.1.112
+fi
+
 if [ "$secondarydns" == "" ]; then
 secondarydns=8.8.8.8
 fi
-
-
-fi
-
 
 
 if grep -q "dhcp4: no" /etc/netplan/00-installer-config.yaml; then
