@@ -90,13 +90,13 @@ fi
 
 
 echo
-echo "What should be your Secondary DNS? default:192.168.1.110 :"
+echo "What should be your Secondary DNS? default:8.8.8.8 :"
 read secondarydns
 echo
 echo
 
 if [ "$secondarydns" == "" ]; then
-secondarydns=192.168.1.110
+secondarydns=8.8.8.8
 fi
 
 
