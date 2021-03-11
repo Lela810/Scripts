@@ -70,6 +70,39 @@ gw=192.168.1.1
 fi
 
 
+echo
+echo "Do you wanna change the default DNS servers?(Primary: 192.168.1.112, Secondary: 192.168.1.110) y/n:"
+read changedns
+echo
+echo
+
+if [ "$changedns" == "y" ]; then
+
+echo
+echo "What should be your Primary DNS? default:192.168.1.112 :"
+read primarydns
+echo
+echo
+
+if [ "$primarydns" == "" ]; then
+primarydns=192.168.1.112
+fi
+
+
+echo
+echo "What should be your Secondary DNS? default:192.168.1.110 :"
+read secondarydns
+echo
+echo
+
+if [ "$secondarydns" == "" ]; then
+secondarydns=192.168.1.110
+fi
+
+
+fi
+
+
 
 if grep -q "dhcp4: no" /etc/netplan/00-installer-config.yaml; then
 rm /etc/netplan/00-installer-config.yaml
@@ -81,7 +114,7 @@ fi
 echo "Your System will be available under: $ip/$sm"
 echo
 
-        sed -i "s/$interface:/$interface:\n      dhcp4: no\n      dhcp6: no\n      addresses: [$ip\/$sm]\n      gateway4: $gw\n      nameservers:\n        search: [klaus.local]\n        addresses: [192.168.1.112, 192.168.1.110]/" /etc/netplan/00-installer-config.yaml
+        sed -i "s/$interface:/$interface:\n      dhcp4: no\n      dhcp6: no\n      addresses: [$ip\/$sm]\n      gateway4: $gw\n      nameservers:\n        search: [klaus.local]\n        addresses: [$primarydns, $secondarydns]/" /etc/netplan/00-installer-config.yaml
         sed -i "s/dhcp4: true//" /etc/netplan/00-installer-config.yaml
 		sed -i "s/dhcp6: true//" /etc/netplan/00-installer-config.yaml
 
