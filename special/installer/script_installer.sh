@@ -80,11 +80,6 @@ echo
 echo
 
 
-echo
-echo "Do you wanna install a Snowl-Sensor? y/n:"
-read snowl
-echo
-echo
 
 
 
@@ -113,12 +108,6 @@ echo
 echo "Webmin installed!"
 fi
 
-if [ "$snowl" == "y" ]; then 
-./linux/setup_snowlsensor.sh
-echo
-echo
-echo "Snowl-Sensor installed!"
-fi
 
 ./linux/setup_updater.sh
 
