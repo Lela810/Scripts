@@ -15,16 +15,5 @@ fi
 
 
 #Download Premade Config Files
-cd /root
-rm autoupdate.sh
-wget https://raw.githubusercontent.com/lela810/Scripts/master/special/scheduled_scripts/autoupdate.sh
-chmod +x autoupdate.sh
-
-#write out current crontab
-crontab -l > mycron
-#echo new cron into cron file
-sed -i "/autoupdate.sh/d" mycron
-echo "0 * * * * /root/autoupdate.sh > /dev/null 2>&1" >> mycron
-#install new cron file
-crontab mycron
-rm mycron
+apt install unattended-upgrades -y
+dpkg-reconfigure --priority=critical unattended-upgrades
