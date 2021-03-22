@@ -33,15 +33,17 @@ echo "Alias /blog /usr/share/wordpress
 </Directory>" > /etc/apache2/sites-available/wordpress.conf
 
 
-mysql -u root
+a2ensite wordpress
+a2enmod rewrite
+service apache2 reload
 
-CREATE DATABASE wordpress;
+echo "CREATE DATABASE IF NOT EXISTS wordpress;
+CREATE USER IF NOT EXISTS "wordpress"@"localhost" IDENTIFIED BY \"31Yxcvbnm\";
+GRANT ALL PRIVILEGES ON databasename.* TO "wordpress"@"localhost";
+FLUSH PRIVILEGES;" > wordpress.sql
 
-GRANT ALL PRIVILEGES ON databasename.* TO "wordpress"@"localhost" IDENTIFIED BY "31Yxcvbnm,.-wordpress";
-
-FLUSH PRIVILEGES;
-
-EXIT
+mysql -u root < wordpress.sql
+rm wordpress.sql
 
 
 cd /usr/share/wordpress
@@ -57,7 +59,7 @@ echo "Wordpress installed!"
 echo ""
 echo "MySQL:"
 echo "	User: wordpress"
-echo "	Password: 31Yxcvbnm,.-wordpress"
+echo "	Password: 31Yxcvbnm"
 echo ""
 echo ""
 echo ""
