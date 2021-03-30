@@ -17,7 +17,7 @@ fi
 echo ""
 echo ""
 echo "How is the Domain of the Website? xyz.xy:"
-read $domain
+read domain
 echo ""
 
 
@@ -25,12 +25,12 @@ apt update -y
 apt install wordpress php libapache2-mod-php mysql-server php-mysql -y
 
 echo "<VirtualHost *:80>
-    ServerName ${domain}
-    Redirect permanent / https://www.${domain}/
+    ServerName $domain
+    Redirect permanent / https://www.$domain/
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName www.${domain}
+    ServerName www.$domain
     DocumentRoot /usr/share/wordpress
     <Directory /usr/share/wordpress>
        Options FollowSymLinks
@@ -63,7 +63,7 @@ rm wordpress.sql
 cd /usr/share/
 chown www-data:www-data  -R ./wordpress # Let Apache be owner
 cd ./wordpress
-chmod 755 *
+chmod -R 755 *
 
 
 
@@ -74,9 +74,24 @@ define('DB_PASSWORD', '31Yxcvbnm');
 define('DB_HOST', 'localhost');
 define('DB_COLLATE', 'utf8_general_ci');
 define('WP_CONTENT_DIR', '/usr/share/wordpress/wp-content');
-define( 'WP_HOME', 'https://www.${domain}' );
-define( 'WP_SITEURL', 'https://www.${domain}' );
-?>" > /etc/wordpress/config-${domain}.php
+define( 'WP_HOME', 'https://www.$domain' );
+define( 'WP_SITEURL', 'https://www.$domain' );
+?>" > /etc/wordpress/config-$domain.php
+
+#Update
+wget https://wordpress.org/wordpress-5.6.2.tar.gz 
+tar -xf wordpress-5.6.2.tar.gz
+rm -r /usr/share/wordpress/wp-includes
+rm -r /usr/share/wordpress/wp-admin
+cp -r ./wordpress/wp-admin /usr/share/wordpress/wp-admin
+cp -r ./wordpress/wp-includes /usr/share/wordpress/wp-includes
+cp -nr ./wordpress/wp-content/* /usr/share/wordpress/wp-content/*
+cp ./wordpress/*.php /usr/share/wordpress/
+cd /usr/share/
+chown www-data:www-data  -R ./wordpress
+cd ./wordpress
+chmod -R 755 *
+service apache2 restart
 
 
 echo ""
@@ -91,3 +106,4 @@ echo ""
 echo "Add \"define('FS_METHOD','direct');\" to /usr/share/wordpress/wp-config.php"
 echo ""
 echo ""
+
