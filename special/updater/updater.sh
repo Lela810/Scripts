@@ -15,6 +15,7 @@ rm *.sh.*
 apt remove snowl-sensor snort snort-* -y
 
 
+
 #Update
 
 
