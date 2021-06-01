@@ -58,12 +58,13 @@ echo
 echo "Your IP is now set Static!"
 fi
 
-
+if [dpkg -s linux-virtual linux-cloud-tools-virtual linux-tools-virtual mlocate gzip tar]
 echo
 echo "Do you wanna install Linux Integration Services for Hyper-V? y/n:"
 read ubuntulis
 echo
 echo
+fi
 
 
 echo
