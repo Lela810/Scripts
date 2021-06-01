@@ -32,7 +32,6 @@ cd /tmp/Scripts
 
 
 
-
 clear
 
 
@@ -58,7 +57,8 @@ echo
 echo "Your IP is now set Static!"
 fi
 
-if dpkg -s linux-virtual linux-cloud-tools-virtual linux-tools-virtual; then
+
+if dpkg -s linux-virtual linux-cloud-tools-virtual linux-tools-virtual &> /dev/null; then
 echo
 echo "Do you wanna install Linux Integration Services for Hyper-V? y/n:"
 read ubuntulis
