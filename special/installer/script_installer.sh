@@ -73,7 +73,7 @@ echo "Do you wanna install Auto-update? y/n:"
 read autoupdate
 echo
 echo
-
+fi
 
 if dpkg -s zabbix-agent &> /dev/null; then
 echo
@@ -81,7 +81,7 @@ echo "Do you wanna install Zabbix Agent? y/n:"
 read zabbix
 echo
 echo
-
+fi
 
 
 
