@@ -12,7 +12,6 @@ rm up.sh
 
 rm *.sh.*
 
-apt remove snowl-sensor snort snort-* -y
 
 
 
@@ -21,7 +20,6 @@ apt remove snowl-sensor snort snort-* -y
 
 
 wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/installer_updater.sh
-wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/autoupdate_updater.sh
 wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/ssh_updater.sh
 
 
