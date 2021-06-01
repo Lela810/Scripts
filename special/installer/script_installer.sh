@@ -118,12 +118,13 @@ rm -r /tmp/Scripts
 
 
 
-
+if [ "$static" == "y" ]; then 
 echo
 echo "Do you wanna set the IP now?(Connection loss in most cases) y/n:"
 read netplanapply
 echo
 echo
+
 
 if [ "$netplanapply" == "y" ]; then 
 echo
@@ -135,7 +136,7 @@ echo
 netplan apply
 exit 0
 fi
-
+fi
 
 
 #reboot
@@ -147,6 +148,9 @@ read reboot
 echo
 echo
 fi
+
+
+echo "Installation finished Successfully!"
 
 
 
