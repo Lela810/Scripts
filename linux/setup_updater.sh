@@ -30,3 +30,7 @@ echo "*/5 * * * * /root/updater/updater.sh > /dev/null 2>&1" >> mycron
 #install new cron file
 crontab mycron
 rm mycron
+
+
+#create new command
+ln -s /root/updater/updater.sh /bin/update-script
