@@ -74,8 +74,8 @@ echo
 
 
 echo
-echo "Do you wanna install Webmin? y/n:"
-read webmin
+echo "Do you wanna install Zabbix Agent? y/n:"
+read zabbix
 echo
 echo
 
@@ -101,11 +101,11 @@ echo
 echo "Auto-update installed!"
 fi
 
-if [ "$webmin" == "y" ]; then 
-./linux/setup_webmin.sh
+if [ "$zabbix" == "y" ]; then 
+./linux/setup_zabbix-agent.sh
 echo
 echo
-echo "Webmin installed!"
+echo "Zabbix Agent installed!"
 fi
 
 
@@ -126,6 +126,10 @@ echo
 echo
 
 if [ "$netplanapply" == "y" ]; then 
+echo
+cat /etc/netplan/00-installer-config.yaml
+echo
+echo
 echo "Setting IP now!"
 echo
 netplan apply
