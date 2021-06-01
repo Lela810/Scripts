@@ -67,6 +67,7 @@ echo
 fi
 
 
+if dpkg -s unattended-upgrades &> /dev/null; then
 echo
 echo "Do you wanna install Auto-update? y/n:"
 read autoupdate
@@ -74,6 +75,7 @@ echo
 echo
 
 
+if dpkg -s zabbix-agent &> /dev/null; then
 echo
 echo "Do you wanna install Zabbix Agent? y/n:"
 read zabbix
