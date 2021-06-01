@@ -14,10 +14,6 @@ fi
 
 
 
-wget https://repo.zabbix.com/zabbix/5.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.4-1+ubuntu20.04_all.deb
-dpkg -i zabbix-release_5.4-1+ubuntu20.04_all.deb
-apt update
-
 
 apt install zabbix-agent -y
 
