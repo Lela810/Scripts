@@ -16,13 +16,13 @@ fi
 
 echo ""
 echo ""
-echo "How is the Domain of the Website? xyz.xy:"
+echo "How is the Domain of the Website? xyz.xy (without www.):"
 read domain
 echo ""
 
 
 apt update -y
-apt install wordpress php libapache2-mod-php mysql-server php-mysql -y
+apt install wordpress php libapache2-mod-php mysql-server php-mysql php-curl php-dom php-mbstring php-imagick php-zip -y
 
 echo "<VirtualHost *:80>
     ServerName $domain
