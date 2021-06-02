@@ -17,6 +17,7 @@ fi
 
 apt install zabbix-agent -y
 
+cd /temp
 wget https://raw.githubusercontent.com/lela810/Scripts/master/config/zabbix_agentd.conf
 rm /etc/zabbix/zabbix_agentd.conf
 mv zabbix_agentd.conf /etc/zabbix/
