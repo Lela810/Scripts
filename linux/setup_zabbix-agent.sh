@@ -25,5 +25,5 @@ rm /etc/zabbix/zabbix_agentd.conf
 mv zabbix_agentd.conf /etc/zabbix/
 mkdir /etc/zabbix/zabbix_agentd.d
 
-systemctl restart zabbix-agent
+systemctl stop zabbix-agent
 systemctl enable zabbix-agent

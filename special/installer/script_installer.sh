@@ -120,6 +120,13 @@ cd /root
 rm -r /tmp/Scripts
 
 
+if [ "$zabbix" == "y" ]; then 
+if [ "$static" == "n" ]; then 
+systemctl restart zabbix-agent
+fi
+fi
+
+
 
 if [ "$static" == "y" ]; then 
 echo
