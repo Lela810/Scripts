@@ -31,7 +31,7 @@ echo
 echo
 
 if [ "$interface" == "" ]; then
-interface=eth0
+interface=ens18
 fi
 
 
