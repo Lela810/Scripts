@@ -104,28 +104,6 @@ update-initramfs -u
 
 apt install qemu-guest-agent -y
 
-cat /etc/netplan/00-installer-config.yaml
-echo
-echo "What interface should be replaced? default:eth0 :"
-read interfacerep
-echo
-echo
-if [ "$interfacerep" == "" ]; then 
-interfacerep=eth0
-fi
-
-ip a
-echo
-echo "What interface should it be replaced with? default:ens18 :"
-read interfacenew
-echo
-echo
-if [ "$interfacenew" == "" ]; then 
-interfacerep=ens18
-fi
-
-
-sed -i 's/$interfacerep/$interfacenew/g' /etc/netplan/00-installer-config.yaml
 echo
 echo
 echo "Linux migrated to Proxmox!"
