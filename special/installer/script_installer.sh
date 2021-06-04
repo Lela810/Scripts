@@ -98,8 +98,8 @@ echo
 
 
 
-if [ "$proxmig" == "y" ]; then 
-head -n -4 /etc/initramfs-tools/modules
+if [ "$proxmig" == "y" ]; then
+head -n -4 /etc/initramfs-tools/modules > tmp.txt && mv tmp.txt /etc/initramfs-tools/modules
 update-initramfs -u
 
 apt install qemu-guest-agent -y
