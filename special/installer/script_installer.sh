@@ -21,6 +21,8 @@ apt -y install git grep
 
 
 
+
+
 #Download Scripts Repo
 cd /tmp/
 git clone https://github.com/Lela810/Scripts
@@ -58,6 +60,16 @@ echo "Your IP is now set Static!"
 fi
 
 
+if ! dpkg -s linux-virtual linux-cloud-tools-virtual linux-tools-virtual mlocate gzip tar &> /dev/null; then
+echo
+echo "Do you wanna install Linux Virtual Kernel? y/n:"
+read vmkernel
+echo
+echo
+fi
+
+
+
 if ! dpkg -s unattended-upgrades &> /dev/null; then
 echo
 echo "Do you wanna install Auto-update? y/n:"
@@ -74,6 +86,11 @@ echo
 echo
 fi
 
+echo
+echo "Do you wanna migrate to Proxmox? y/n:"
+read proxmig
+echo
+echo
 
 
 
@@ -81,8 +98,42 @@ fi
 
 
 
-if [ "$ubuntulis" == "y" ]; then 
-./linux/setup_ubuntulis.sh
+if [ "$proxmig" == "y" ]; then 
+head -n -4 /etc/initramfs-tools/modules
+update-initramfs -u
+
+cat /etc/netplan/00-installer-config.yaml
+echo
+echo "What interface should be replaced? default:eth0 :"
+read interfacerep
+echo
+echo
+if [ "$interfacerep" == "" ]; then 
+interfacerep=eth0
+fi
+
+ip a
+echo
+echo "What interface should it be replaced with? default:ens18 :"
+read interfacenew
+echo
+echo
+if [ "$interfacenew" == "" ]; then 
+interfacerep=ens18
+fi
+
+
+sed -i 's/$interfacerep/$interfacenew/g' /etc/netplan/00-installer-config.yaml
+echo
+echo
+echo "Linux migrated to Proxmox!"
+fi
+
+
+
+if [ "$vmkernel" == "y" ]; then 
+# Replace Out of Box Kernal with linux-virtual
+apt -qq install linux-virtual linux-cloud-tools-virtual linux-tools-virtual mlocate gzip tar
 echo
 echo
 echo "Linux Integration Services installed!"
