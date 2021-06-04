@@ -102,6 +102,8 @@ if [ "$proxmig" == "y" ]; then
 head -n -4 /etc/initramfs-tools/modules
 update-initramfs -u
 
+apt install qemu-guest-agent -y
+
 cat /etc/netplan/00-installer-config.yaml
 echo
 echo "What interface should be replaced? default:eth0 :"
