@@ -34,3 +34,4 @@ rm mycron
 
 #create new command
 ln -s /root/updater/updater.sh /bin/update-script
+ln -s /root/script_installer.sh /bin/script-installer

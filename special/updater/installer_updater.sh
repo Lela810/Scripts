@@ -10,7 +10,7 @@ clear
 
 
 # Update
-cd /home/administrator
+cd /root
 rm script_installer.sh
 wget https://raw.githubusercontent.com/lela810/Scripts/master/special/installer/script_installer.sh
 chmod +x script_installer.sh

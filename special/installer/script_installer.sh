@@ -19,7 +19,10 @@ apt update && apt -y upgrade
 apt -y install git grep
 
 
-
+#install script installer in /root
+cd /root
+wget https://raw.githubusercontent.com/lela810/Scripts/master/special/installer/script_installer.sh
+chmod +x script_installer.sh
 
 
 
