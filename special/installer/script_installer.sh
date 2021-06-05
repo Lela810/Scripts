@@ -107,6 +107,8 @@ update-initramfs -u
 
 apt install qemu-guest-agent -y
 
+systemctl disable hv-kvp-daemon.service
+
 echo
 echo
 echo "Linux migrated to Proxmox!"
