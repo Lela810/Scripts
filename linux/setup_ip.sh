@@ -25,7 +25,7 @@ apt -y install net-tools network-manager
 cat /etc/netplan/00-installer-config.yaml
 echo
 echo
-echo "What Interface should get it? default:eth0 :"
+echo "What Interface should get it? default:ens18 :"
 read interface
 echo
 echo
