@@ -118,7 +118,7 @@ fi
 
 if [ "$vmkernel" == "y" ]; then 
 # Replace Out of Box Kernal with linux-virtual
-apt -qq install linux-virtual linux-cloud-tools-virtual linux-tools-virtual mlocate gzip tar
+apt install linux-virtual linux-cloud-tools-virtual linux-tools-virtual mlocate gzip tar -y
 echo
 echo
 echo "Linux Integration Services installed!"
