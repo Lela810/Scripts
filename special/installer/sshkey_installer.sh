@@ -13,10 +13,10 @@ elif [[ $EUID -eq 0 ]]; then
 fi
 
 
-ssh-keygen
+ssh-keygen -b 4096 -C $HOSTNAME
 
 
-
+cp /root/.ssh/id_rsa* /home/administrator
 sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
 
 
@@ -29,4 +29,5 @@ ls /home/administrator/id_rsa*
 echo ""
 read -s
 
+rm /home/administrator/id_rsa*
 systemctl restart sshd
