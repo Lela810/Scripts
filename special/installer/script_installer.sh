@@ -95,7 +95,7 @@ read proxmig
 echo
 echo
 
-if [ -f /etc/init/ttyS0.conf ]; then
+if [ /etc/init/ttyS0.conf ]; then
 echo 
 echo
 echo "Do you wanna install a Serial Terminal? y/n:"
