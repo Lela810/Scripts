@@ -95,6 +95,16 @@ read proxmig
 echo
 echo
 
+if [ -f /etc/init/ttyS0.conf ]; then
+echo 
+echo
+echo "Do you wanna install a Serial Terminal? y/n:"
+read serial
+echo
+echo
+fi
+
+
 
 
 
@@ -137,6 +147,14 @@ echo
 echo
 echo "Zabbix Agent installed!"
 fi
+
+if [ "$serial" == "y" ]; then 
+./linux/setup_serial.sh
+echo
+echo
+echo "Serial Terminal installed!"
+fi
+
 
 
 ./linux/setup_updater.sh
