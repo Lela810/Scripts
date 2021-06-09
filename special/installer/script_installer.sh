@@ -63,14 +63,6 @@ echo "Your IP is now set Static!"
 fi
 
 
-if ! dpkg -s linux-virtual linux-cloud-tools-virtual linux-tools-virtual mlocate gzip tar &> /dev/null; then
-echo
-echo "Do you wanna install Linux Virtual Kernel? y/n:"
-read vmkernel
-echo
-echo
-fi
-
 
 
 if ! dpkg -s unattended-upgrades &> /dev/null; then
@@ -108,13 +100,6 @@ fi
 
 
 
-if [ "$vmkernel" == "y" ]; then 
-# Replace Out of Box Kernal with linux-virtual
-apt install linux-virtual linux-cloud-tools-virtual linux-tools-virtual mlocate gzip tar -y
-echo
-echo
-echo "Linux Integration Services installed!"
-fi
 
 if [ "$autoupdate" == "y" ]; then 
 ./linux/setup_autoupdate.sh
