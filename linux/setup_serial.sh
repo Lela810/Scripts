@@ -16,6 +16,8 @@ fi
 cd  /etc/init/
 wget https://raw.githubusercontent.com/lela810/Scripts/master/config/ttys0.conf
 
+sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="quiet console=tty0 console=ttyS0,115200" /g' /etc/default/grub
+update-grub
 
 touch /var/run/reboot-required
 
