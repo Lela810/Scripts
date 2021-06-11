@@ -14,7 +14,7 @@ fi
 
 
 cd  /etc/init/
-wget https://raw.githubusercontent.com/lela810/Scripts/master/config/ttys0.conf
+wget https://raw.githubusercontent.com/lela810/Scripts/master/config/ttyS0.conf
 
 sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="console=tty0 console=ttyS0,115200n8" /g' /etc/default/grub
 update-grub
