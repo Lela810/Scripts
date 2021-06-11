@@ -74,7 +74,7 @@ echo
 fi
 
 
-if ! dpkg -s zabbix-agent &> /dev/null; then
+if ! dpkg -s zabbix-agent zabbix-agent2 &> /dev/null; then
 echo
 echo "Do you wanna install Zabbix Agent? y/n:"
 read zabbix
@@ -83,7 +83,7 @@ echo
 fi
 
 
-if ! dpkg -s zabbix-agent2 &> /dev/null; then
+if ! dpkg -s zabbix-agent2 zabbix-agent &> /dev/null; then
 echo
 echo "Do you wanna install Zabbix Agent2? y/n:"
 read zabbix2
