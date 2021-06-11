@@ -83,6 +83,16 @@ echo
 fi
 
 
+if ! dpkg -s zabbix-agent2 &> /dev/null; then
+echo
+echo "Do you wanna install Zabbix Agent2? y/n:"
+read zabbix2
+echo
+echo
+fi
+
+
+
 if [ /etc/init/ttyS0.conf ]; then
 echo 
 echo
@@ -114,6 +124,14 @@ echo
 echo
 echo "Zabbix Agent installed!"
 fi
+
+if [ "$zabbix2" == "y" ]; then 
+./linux/setup_zabbix-agent2.sh
+echo
+echo
+echo "Zabbix Agent2 installed!"
+fi
+
 
 if [ "$serial" == "y" ]; then 
 ./linux/setup_serial.sh
