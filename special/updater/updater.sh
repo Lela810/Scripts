@@ -10,7 +10,7 @@ cd /etc/zabbix/zabbix_agentd.d/
 rm apt.conf
 wget https://raw.githubusercontent.com/lela810/Scripts/master/config/apt.conf
 
-cd /temp
+cd /tmp
 wget https://raw.githubusercontent.com/lela810/Scripts/master/config/02periodic
 rm /etc/apt/apt.conf.d/02periodic
 mv 02periodic /etc/apt/apt.conf.d/02periodic
