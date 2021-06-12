@@ -5,13 +5,6 @@
 clear
 
 
-#Remove old updater files
-cd /root/updater
-rm *_updater.sh
-rm up.sh
-
-rm *.sh.*
-
 #TEMP
 cd /etc/zabbix/zabbix_agentd.d/
 rm apt.conf
@@ -21,6 +14,15 @@ cd /temp
 wget https://raw.githubusercontent.com/lela810/Scripts/master/config/02periodic
 rm /etc/apt/apt.conf.d/02periodic
 mv 02periodic /etc/apt/apt.conf.d/02periodic
+
+
+#Remove old updater files
+cd /root/updater
+rm *_updater.sh
+rm up.sh
+
+rm *.sh.*
+
 
 
 #Update
