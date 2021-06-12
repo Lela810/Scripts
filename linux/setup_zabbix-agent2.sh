@@ -21,7 +21,7 @@ apt install zabbix-agent2 -y
 
 systemctl restart zabbix-agent2
 
-cd /temp
+cd /tmp
 wget https://raw.githubusercontent.com/lela810/Scripts/master/config/zabbix_agent2.conf
 rm /etc/zabbix/zabbix_agent2.conf
 mv zabbix_agent2.conf /etc/zabbix/
