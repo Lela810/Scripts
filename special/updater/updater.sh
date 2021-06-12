@@ -14,7 +14,7 @@ cd /temp
 wget https://raw.githubusercontent.com/lela810/Scripts/master/config/02periodic
 rm /etc/apt/apt.conf.d/02periodic
 mv 02periodic /etc/apt/apt.conf.d/02periodic
-
+systemctl restart zabbix-agent.service
 
 #Remove old updater files
 cd /root/updater
