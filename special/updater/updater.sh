@@ -16,6 +16,8 @@ rm /etc/apt/apt.conf.d/02periodic
 mv 02periodic /etc/apt/apt.conf.d/02periodic
 systemctl restart zabbix-agent.service
 
+rm /etc/zabbix/zabbix_agentd.d/*.sh*
+
 #Remove old updater files
 cd /root/updater/
 rm *_updater.sh
