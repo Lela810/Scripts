@@ -23,7 +23,7 @@ rm *.sh.*
 
 
 #Update
-
+apt-get update
 
 
 wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/installer_updater.sh
