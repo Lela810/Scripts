@@ -11,7 +11,7 @@ clear
 
 # Update
 cd /root
-rm script_installer.sh
+rm script_installer.*
 wget https://raw.githubusercontent.com/lela810/Scripts/master/special/installer/script_installer.sh
 chmod +x script_installer.sh
 

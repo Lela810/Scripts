@@ -4,19 +4,14 @@
 # Clear Current Screen
 clear
 
+#TEMP
+
+apt remove linux-virtual linux-cloud-tools-virtual linux-tools-virtual -y
+systemctl disable hv-kvp-daemon.service
 
 #TEMP
-cd /etc/zabbix/zabbix_agentd.d/
-rm apt.conf
-wget https://raw.githubusercontent.com/lela810/Scripts/master/config/apt.conf
 
-cd /tmp
-wget https://raw.githubusercontent.com/lela810/Scripts/master/config/02periodic
-rm /etc/apt/apt.conf.d/02periodic
-mv 02periodic /etc/apt/apt.conf.d/02periodic
-systemctl restart zabbix-agent.service
 
-rm /etc/zabbix/zabbix_agentd.d/*.sh*
 
 #Remove old updater files
 cd /root/updater/
