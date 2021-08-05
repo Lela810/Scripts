@@ -16,6 +16,7 @@ wget https://raw.githubusercontent.com/lela810/Scripts/master/config/chrony.conf
 rm /etc/chrony/chrony.conf
 mv /tmp/chrony.conf /etc/chrony/chrony.conf
 systemctl restart chrony
+rm /root/autoupdate.sh
 
 #TEMP
 
@@ -38,6 +39,8 @@ apt-get update
 
 wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/installer_updater.sh
 wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/ssh_updater.sh
+wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/ntp_updater.sh
+
 
 
 
@@ -48,7 +51,8 @@ if [ ! "$HOSTNAME" = sshgateway ]; then
 ./ssh_updater.sh
 fi
 
-./autoupdate_updater.sh
+
+./ntp_updater.sh
 ./installer_updater.sh
 ./up.sh
 
