@@ -4,14 +4,24 @@
 # Clear Current Screen
 clear
 
-#TEMP
 
-apt remove linux-virtual linux-cloud-tools-virtual linux-tools-virtual -y
-systemctl disable hv-kvp-daemon.service
 
 #TEMP
 
+timedatectl set-timezone Europe/Zurich
+apt install chrony -y
+systemctl enable --now chronydsystemctl enable --now chrony
+cd /tmp/
+wget https://raw.githubusercontent.com/lela810/Scripts/master/config/chrony.conf
+rm /etc/chrony/chrony.conf
+mv /tmp/chrony.conf /etc/chrony/chrony.conf
+systemctl restart chrony
 
+#TEMP
+
+
+
+apt autoremove -y
 
 #Remove old updater files
 cd /root/updater/
