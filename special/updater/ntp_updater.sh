@@ -12,7 +12,6 @@ clear
 
 timedatectl set-timezone Europe/Zurich
 apt install chrony -y
-systemctl enable --now chrony
 
 
 cd /tmp/
