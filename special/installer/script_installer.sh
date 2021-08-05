@@ -42,7 +42,7 @@ fi
 
 clear
 
-
+echo $static
 
 
 echo
@@ -52,7 +52,7 @@ echo "(Press RETURN for saved configuration: "$static" )"
 fi
 read static
 echo
-echo
+echo $static
 
 if [ "$static" == "y" ]; then 
 ./linux/setup_ip.sh
