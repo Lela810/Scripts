@@ -47,12 +47,24 @@ echo $static
 
 echo
 echo "Do you wanna to set a Static IP? y/n:"
-if [ "$static" == "y" ]; then 
+if [ "$static" ]; then 
 echo "(Press RETURN for saved configuration: "$static" )"
 fi
 read static
 echo
 echo $static
+
+if [ ! "$static" == "y" && ! "$static" == "n" ]; then 
+$static="n"
+fi
+if [ ! "$static" ]; then 
+source /root/updater/updater.conf
+fi
+
+echo $static
+
+sed -i "/static/d" /root/updater/updater.conf
+echo "static=\""$static"\"" > /root/updater/updater.conf
 
 if [ "$static" == "y" ]; then 
 ./linux/setup_ip.sh
@@ -60,12 +72,9 @@ echo
 echo
 echo "Your IP is now set Static!"
 fi
-if [ ! "$static" == "y" ]; then 
-if ! grep -Fxq "static=\"n\"" /root/updater/updater.conf
-then
-echo "static=\"n\"" > /root/updater/updater.conf
-fi
-fi
+ 
+
+
 
 
 
