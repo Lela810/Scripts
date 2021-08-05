@@ -34,19 +34,15 @@ chmod +x *
 cd /tmp/Scripts
 
 
-
+#load variables if available
+if [ -f /root/updater/updater.conf ]; then
+source /root/updater/updater.conf
+fi
 
 
 clear
 
 
-
-
-echo
-echo
-echo "Your Scrips are now located in /home/administrator"
-echo 
-echo
 
 
 echo
@@ -61,6 +57,13 @@ echo
 echo
 echo "Your IP is now set Static!"
 fi
+if [ ! "$static" == "y" ]; then 
+if ! grep -Fxq "static=\"n\"" /root/updater/updater.conf
+then
+echo "static=\"n\"" > /root/updater/updater.conf
+fi
+fi
+
 
 
 
