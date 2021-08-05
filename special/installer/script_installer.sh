@@ -47,6 +47,9 @@ clear
 
 echo
 echo "Do you wanna to set a Static IP? y/n:"
+if [ "$static" == "y" ]; then 
+echo "(Press RETURN for saved configuration: "$static" )"
+fi
 read static
 echo
 echo
