@@ -54,11 +54,11 @@ read static
 echo
 echo $static
 
-if [ ! "$static" == "y" && ! "$static" == "n" ]; then 
-$static="n"
-fi
 if [ ! "$static" ]; then 
 source /root/updater/updater.conf
+fi
+if [ ! "$static" == "y" ] && [ ! "$static" == "n" ]; then 
+static="n"
 fi
 
 echo $static
