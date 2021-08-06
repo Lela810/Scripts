@@ -171,7 +171,7 @@ echo
 echo
 fi
 
-fi
+
 if [ ! "$serial" ]; then 
 source /root/updater/updater.conf
 fi
