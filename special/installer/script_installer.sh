@@ -16,7 +16,7 @@ fi
 
 #install needed Tools
 apt update && apt -y upgrade
-apt -y install git grep
+apt -y install git grep dnsmasq
 
 
 #install script installer in /root
