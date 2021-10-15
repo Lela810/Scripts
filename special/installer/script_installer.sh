@@ -159,28 +159,7 @@ echo "zabbix2=\""$zabbix2"\"" > /root/updater/updater.conf
 
 
 
-if [ /etc/init/ttyS0.conf ]; then
-echo 
-echo
-echo "Do you wanna install a Serial Terminal? y/n:"
-if [ "$serial" ]; then 
-echo "(Press RETURN for saved configuration: "$serial" )"
-fi
-read serial
-echo
-echo
-fi
 
-
-if [ ! "$serial" ]; then 
-source /root/updater/updater.conf
-fi
-if [ ! "$serial" == "y" ] && [ ! "$serial" == "n" ]; then 
-serial="n"
-fi
-
-sed -i "/serial/d" /root/updater/updater.conf
-echo "serial=\""$serial"\"" > /root/updater/updater.conf
 
 
 
@@ -213,12 +192,6 @@ echo "Zabbix Agent2 installed!"
 fi
 
 
-if [ "$serial" == "y" ]; then 
-./linux/setup_serial.sh
-echo
-echo
-echo "Serial Terminal installed!"
-fi
 
 
 
