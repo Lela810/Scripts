@@ -37,7 +37,7 @@ wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/nt
 wget https://raw.githubusercontent.com/lela810/Scripts/master/special/updater/up.sh
 chmod +x *
 
-if [ ! "$HOSTNAME" = sshgateway ]; then
+if [ ! "$HOSTNAME" = remotegateway ]; then
 ./ssh_updater.sh
 fi
 
