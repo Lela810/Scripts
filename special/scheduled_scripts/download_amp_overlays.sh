@@ -7,6 +7,7 @@ clear
 
 
 #Download AMP-Overlays
+mkdir /opt/cubecoders/amp/shared/overlays
 cd /opt/cubecoders/amp/shared/overlays/
 rm -r *
 git clone https://github.com/Lela810/AMP-overlays
