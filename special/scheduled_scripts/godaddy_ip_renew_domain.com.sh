@@ -2,7 +2,7 @@
 
 mydomain="__domain.com__"
 myhostname="__hostname__"
-gdapikey="e52jGxL1hZnY_4N5A5moYSa7YVwVe6kuJfN:VEEHtPajbTh4QY6kCMRtpG"
+gdapikey=""
 
 myip=`curl -s "https://api.ipify.org"`
 dnsdata=`curl -s -X GET -H "Authorization: sso-key ${gdapikey}" "https://api.godaddy.com/v1/domains/${mydomain}/records/A/${myhostname}"`
