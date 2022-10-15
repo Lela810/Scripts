@@ -14,9 +14,9 @@ fi
 
 
 # install updater
-#wget https://raw.githubusercontent.com/lela810/Scripts/master/linux/setup_ansible.sh && chmod +x setup_ansible.sh && .\setup_ansible.sh
+#wget https://raw.githubusercontent.com/lela810/Scripts/master/linux/setup_ansible.sh && chmod +x setup_ansible.sh && bash setup_ansible.sh
 
 
-adduser ansible
+adduser ansible --disabled-password
 passwd ansible
 usermod -aG sudo ansible
